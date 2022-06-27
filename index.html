@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/c924cbf80f.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+    <link href="bootstrap-5.0.2-dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="main">
+
+        <div class="offcanvas offcanvas-end" id="demo">
+            <div class="offcanvas-header">
+              <h1 class="offcanvas-title">History</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+            </div>
+            <div class="offcanvas-body">
+              <p>Some text lorem ipsum.</p>
+              <!-- <button class="btn btn-secondary" type="button">A Button</button> -->
+            </div>
+        </div>
+
+        <div class="title">
+           <h1>Tic Tac Toe</h1>
+        </div>
+
+        <div class="players-info">
+            <span>Player-1 Name:</span> <input type="text" id="player-1" value=""><br><br>
+            <span>Player-2 Name:</span> <input type="text" id="player-2" value=""><br><br>
+            <button onclick="showGameUI()" type="submit">Start Game</button><br><br><button type="button" onclick="showGameDefalutUI()">Start without Name</button>
+        </div>
+        
+        <div class="game">
+            <div class="player-score">
+                <button><span id="name1" class="padding-right">X : </span> <span>-</span></button>
+                <button><span id="name2" class="padding-right">O : </span><span>-</span></button>
+            </div>
+            <table>
+                <tr>
+                    <td class="border-down border-right" id="0"></td>
+                    <td class="border-down border-right" id="1"></td>
+                    <td class="border-down" id="2"></td>
+                </tr>
+                <tr>
+                    <td class="border-down border-right" id="3"></td>
+                    <td class="border-down border-right" id="4"></td>
+                    <td class="border-down" id="5"></td>
+                </tr>
+                <tr>
+                    <td class="border-right" id="6"></td>
+                    <td class="border-right" id="7"></td>
+                    <td id="8"></td>
+                </tr>
+            </table>
+            <div class="functions">
+                <button><i class="fas fa-undo"></i></button>
+                <button type="button" data-bs-toggle="offcanvas" data-bs-target="#demo"><i class="fas fa-history"></i></button>
+                <button><i class="fas fa-sync"></i></button>
+            </div>
+        </div>
+    </div>
+    <script src="index.js"></script>
+    <script src="bootstrap-5.0.2-dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

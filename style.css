@@ -1,0 +1,152 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.main{
+    max-width: 100vw;
+    height: 100vh;
+    background: url('img/colors-2-fi.png');
+    background-color: aqua;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.main .title{
+    /* border: 1px solid red; */
+    width: 100%;
+    height: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
+}
+.main .title h1{
+    color: crimson;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+}
+.main .players-info{
+    padding-top: 100px;
+    width: 100%;
+    height: 100%;
+    /* border: 1px solid red; */
+    text-align: center;
+    display: block;
+}
+.main .players-info button{
+    padding: 10px;
+    font-weight: 700;
+    color: brown;
+    background-color:aquamarine;
+    border-color: gold;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 20px;
+    border-width: 5px;
+}
+.main .players-info button:hover{
+    color: orangered;
+}
+.main .players-info input{
+    height: 30px;
+    font-size: 20px;
+    text-align: center;
+    font-weight: 700;
+    color:blueviolet;
+    padding: 7px 0;
+}
+.main .players-info span{
+    font-size: 25px;
+    font-weight: 700;
+    color: red;
+}
+
+
+
+/* game styling */
+.main .game{
+    width: 100%;
+    height: 100%;
+    /* border: 1px solid red; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    display: none;  
+    font-family: 'Courier New', Courier, monospace;
+}
+.main .game .player-score{
+    max-width: 100%;
+    height: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.main .game .player-score button{
+    width: 200px;
+    height: 40px;
+    margin-right: 10px;
+    /* text-align: left; */
+    padding: 0 10px;
+    font-size: 20px;
+    font-weight: 700;
+    color: brown;
+    border-radius: 20px;
+    border-color:purple;
+}
+.padding-right{
+    margin-right: 10px;
+}
+table{
+    border-collapse: collapse;
+    text-align: center;
+    /* box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset; */
+    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);    
+}
+td{
+    width: 100px;
+    height: 100px;
+    padding: 10px;
+    background-color: lightgoldenrodyellow; 
+    cursor: pointer;
+    font-size: 30px;
+    font-family:monospace;
+    color: blueviolet;
+    font-weight: 600;
+}
+td:hover{
+    background-color: yellow;
+    color: orangered;
+    font-weight: 700;
+    transition: all .5s ease;
+}
+.border-down{
+    border-bottom: 5px solid red;
+}
+.border-right{
+    border-right: 5px solid red;
+}
+.main .game .functions{
+    width: 100%;
+    height: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* border: 1px solid red; */
+}
+.main .game .functions button{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border-color:red;
+    border-width: 5px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+.main .game .functions i{
+    font-size: 20px;
+    color: blue;
+}
