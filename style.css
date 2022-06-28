@@ -6,7 +6,7 @@
 .main{
     max-width: 100vw;
     height: 100vh;
-    background: linear-gradient(to right top, #c438a0, #ff3d70, #ff7532, #efb400, #a8eb12);
+    background-image: linear-gradient(to right top, #16aef0, #00c8f1, #00dcc9, #00e980, #a8eb12);
     background-size: cover;
     display: flex;
     align-items: center;
