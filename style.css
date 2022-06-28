@@ -123,10 +123,10 @@ td:hover{
     transition: all .5s ease;
 }
 .border-down{
-    border-bottom: 5px solid red;
+    border-bottom: 5px solid #e05194;
 }
 .border-right{
-    border-right: 5px solid red;
+    border-right: 5px solid #e05194;
 }
 .main .game .functions{
     width: 100%;
