@@ -114,6 +114,7 @@ td{
     font-family:monospace;
     color: blueviolet;
     font-weight: 600;
+    background: transparent;
 }
 td:hover{
     background-color: yellow;
