@@ -27,6 +27,7 @@
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 
 }
+
 .main .players-info{
     padding-top: 100px;
     width: 100%;
@@ -83,6 +84,15 @@
     display: flex;
     align-items: center;
     justify-content: center;
+}
+.main .game #winner{
+    /* border: 1px solid red; */
+    width: 100%;
+    text-align: center;
+    font-size: 35px;
+    font-weight: 700;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: purple;
 }
 .main .game .player-score button{
     width: 200px;
