@@ -155,7 +155,14 @@ td:hover{
     margin-right: 10px;
     cursor: pointer;
 }
-.main .game .functions i{
+.main .game .functions button{
     font-size: 20px;
     color: blue;
 }
+
+.main .game .functions #restart{
+    border-radius: 10%;
+    width: 100px;
+    font-weight: 700;
+}
+
