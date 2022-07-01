@@ -1,7 +1,16 @@
+var flag = true;
+var states = [1, 0, 1, 0, 1, 0, 0, 1, 0];
+var winnerDiv = document.querySelector("#winner");
+var player1 , player2;
+var user1, user2;
+var winCount1 =0, winCount2 =0;
+
+
 function showGameUI() {
-    var player1 = document.querySelector('#player-1').value;
-    var player2 = document.querySelector('#player-2').value;
-    if (player1 != '' && player1 != '') {
+    player1 = document.querySelector('#player-1').value;
+    player2 = document.querySelector('#player-2').value;
+    if (player1 && player2) {
+        
 
         document.querySelector('.players-info').style.display = "none";
         document.querySelector('.game').style.display = "flex";
@@ -14,6 +23,7 @@ function showGameUI() {
     }
 }
 
+
 function showGameDefalutUI() {
     document.querySelector('.players-info').style.display = "none";
     document.querySelector('.game').style.display = "flex";
@@ -21,9 +31,6 @@ function showGameDefalutUI() {
 
 
 
-var flag = true;
-var states = [1, 0, 1, 0, 1, 0, 0, 1, 0];
-var winnerDiv = document.querySelector("#winner");
 
 document.querySelector('table').addEventListener('click', function (e) {
     if (e.target.id)
@@ -37,6 +44,7 @@ function setVal(curBox) {
             curBox.innerHTML = 'X';
             states[id] = 'X';
             flag = !flag;
+            checkWinner(!flag);
         }
     }
     else {
@@ -44,13 +52,13 @@ function setVal(curBox) {
             curBox.innerHTML = 'O';
             states[id] = 'O';
             flag = !flag;
+            checkWinner(!flag);
         }
     }
-    checkWinner(!flag);
-    // console.log(states);
+    displayScore();
 }
 
-function steDisable() {
+function setDisable() {
     for (let i = 0; i < states.length; i++) {
         if (states[i] == 0 || states[i] == 1) {
             states[i] = null;
@@ -60,28 +68,84 @@ function steDisable() {
 
 
 function checkWinner(type) {
-    if ((states[0] == states[1] && states[1] == states[2]) || 
-        (states[3] == states[4] && states[4] == states[5]) || 
-        (states[6] == states[7] && states[7] == states[8])) 
+    user1 = document.querySelector('#name1').innerText;
+    len1 = user1.length;
+    size1 = len1- 2;
+    user1 = user1.slice(0,  size1);
+
+    user2 = document.querySelector('#name2').innerText;
+    len2 = user2.length;
+    size2 = len1- 2;
+    user2 = user2.slice(0,  size2);
+
+    const winIndex = [
+        [0,1,2],
+        [3,4,5],
+        [6,7,8],
+        [0,3,6],
+        [1,4,7],
+        [2,5,8],
+        [0,4,8],
+        [2,4,6]
+    ]
+
+    for(let i=0; i < winIndex.length; i++)
     {
-        // alert("hi")
-        winnerDiv.innerHTML = type?"Winner X !!" : "Winner O !!";
-        steDisable();
-    }
-    else if((states[0] == states[3] && states[3] == states[6]) || 
-            (states[1] == states[4] && states[4] == states[7]) || 
-            (states[2] == states[5] && states[5] == states[8]))
-    {
-        // alert('hii')
-        winnerDiv.innerHTML = type ? "Winner X !!" : "Winner O !!";
-        steDisable();
-    }
-    else if((states[0] == states[4] && states[4] == states[8]) || 
-            (states[2] == states[4] && states[4] == states[6]))
-    {
-        // alert('hiii')
-        winnerDiv.innerHTML =type ? "Winner X !!" : "Winner O !!";
-        steDisable();
+        let [a,b,c] = winIndex[i];
+        if(states[a]==states[b] && states[b]==states[c]){
+            // winnerDiv.innerText = type ?  
+            if(type){
+                winnerDiv.innerText = `Winner ${user1}`;
+                ++winCount1;
+                setWinner(winIndex[i]);
+                setDisable();
+                break;
+            }
+            else{
+                winnerDiv.innerText = `Winner ${user2}`;
+                ++winCount2;
+                setWinner(winIndex[i]);
+                setDisable();
+                break;
+            }
+        }
     }
 }
 
+function setWinner(index){
+    for(let i=0; i< index.length; i++){
+        document.getElementById(index[i]).style.backgroundColor = '#7CFC00';
+    }
+}
+
+
+function restartGame()
+{
+    location.reload();
+}
+
+
+function refreshGame()
+{
+    flag = true;
+    states = [1, 0, 1, 0, 1, 0, 0, 1, 0];
+    tdCollection = document.querySelectorAll('.game table td'); 
+    let allIndex = document.querySelectorAll('td');
+    for(let i = 0; i < allIndex.length; i++){
+        allIndex[i].innerText = "";
+    }
+    winnerDiv.innerHTML= "";
+
+    for(let i=0; i<tdCollection.length; i++){
+        tdCollection[i].style.backgroundColor = "transparent";
+    }
+    
+}
+
+function displayScore()
+{
+    if(winCount1>0 || winCount2 > 0){
+        document.querySelector('#player1-score').innerText = winCount1;
+        document.querySelector('#player2-score').innerText = winCount2;
+    }
+}
