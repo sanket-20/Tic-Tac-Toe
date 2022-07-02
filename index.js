@@ -127,17 +127,20 @@ function restartGame()
 
 function refreshGame()
 {
-    flag = true;
-    states = [1, 0, 1, 0, 1, 0, 0, 1, 0];
-    tdCollection = document.querySelectorAll('.game table td'); 
-    let allIndex = document.querySelectorAll('td');
-    for(let i = 0; i < allIndex.length; i++){
-        allIndex[i].innerText = "";
-    }
-    winnerDiv.innerHTML= "";
-
-    for(let i=0; i<tdCollection.length; i++){
-        tdCollection[i].style.backgroundColor = "transparent";
+    let choice = confirm("Are You Sure Want to Refresh the Game ?");
+    if(choice){
+        flag = true;
+        states = [1, 0, 1, 0, 1, 0, 0, 1, 0];
+        tdCollection = document.querySelectorAll('.game table td'); 
+        let allIndex = document.querySelectorAll('td');
+        for(let i = 0; i < allIndex.length; i++){
+            allIndex[i].innerText = "";
+        }
+        winnerDiv.innerHTML= "";
+    
+        for(let i=0; i<tdCollection.length; i++){
+            tdCollection[i].style.backgroundColor = "transparent";
+        }
     }
     
 }
