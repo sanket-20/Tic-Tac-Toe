@@ -121,7 +121,9 @@ function setWinner(index){
 
 function restartGame()
 {
-    location.reload();
+    let choice = confirm("Are You Sure Want to Restart the Game ?");
+    if(choice)
+        location.reload();
 }
 
 
