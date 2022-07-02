@@ -127,7 +127,7 @@ function restartGame()
 
 function refreshGame()
 {
-    let choice = confirm("Are You Sure Want to Refresh the Game ?");
+    const choice = confirm("Are You Sure Want to Refresh the Game ?");
     if(choice){
         flag = true;
         states = [1, 0, 1, 0, 1, 0, 0, 1, 0];
